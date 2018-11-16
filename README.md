@@ -59,11 +59,11 @@ packer.merge(new Error(''), './package.json', false, new Map(), 0x0, '/Users/dem
     "express": "~4.10.0",
     "has-deep-value": "1.1.0",
     "dts-gen": "^1.0.0",
-    "ramda": "^0.25.0.fake"
+    "ramda": "^0.25.0"
   },
   devDependencies: {
-    chai: "^4.2.0.fake",
-    mocha: "^5.2.0.fake"
+    chai: "^4.2.0",
+    mocha: "^5.2.0"
   }
 }
 ```
@@ -95,11 +95,11 @@ packer.merge(new Error(''), './package.json', false, new Map(), 0x0, '/Users/dem
     "express": "~4.10.0",
     "has-deep-value": "1.1.0",
     "dts-gen": "^1.0.0",
-    "ramda": "^0.25.0.fake"
+    "ramda": "^0.25.0"
   },
   devDependencies: {
-    chai: "^4.2.0.fake",
-    mocha: "^5.2.0.fake"
+    chai: "^4.2.0",
+    mocha: "^5.2.0"
   }
 }
 ```
@@ -108,13 +108,13 @@ packer.merge(new Error(''), './package.json', false, new Map(), 0x0, '/Users/dem
 
 ### Typescript
 
-Included is an `index.d.ts` file, Typescript should automatically pick this file up and apply the typings across your codebase. The usage and output is then the same as for regular Javascript.
+Included is an `index.d.ts` file, Typescript should automatically pick this file up and apply the typings across your codebase. The usage and output is then the same as regular Javascript.
 
 ```typescript
-import { keepPackageData, merge } from "node-dep-packer";
+import * as packer from "node-dep-packer";
  
-keepPackageData = true;
-merge("", "", "");
+packer.keepPackageData = true;
+packer.merge("", "", "");
 ```
 
 ## License
