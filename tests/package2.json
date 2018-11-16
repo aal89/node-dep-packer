@@ -1,0 +1,18 @@
+{
+  "name": "random-package",
+  "version": "0.9.0",
+  "description": "I do not have a description.",
+  "main": "also-no-main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Jane Doe",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "~4.10.0",
+    "has-deep-value": "1.1.0",
+    "dts-gen": "^1.0.0"
+  },
+  "devDependencies": {}
+}

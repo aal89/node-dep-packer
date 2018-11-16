@@ -1,0 +1,35 @@
+{
+  "name": "node-dep-packer",
+  "version": "1.0.0",
+  "description": "A node module (npm) to easily combine several package.json files into one.",
+  "main": "node-dep-packer.js",
+  "scripts": {
+    "test": "clear && mocha ./tests/*.spec.js --timeout 2000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aal89/node-dep-packer.git"
+  },
+  "keywords": [
+    "node",
+    "package",
+    "json",
+    "combine",
+    "package.json",
+    "merge",
+    "npm"
+  ],
+  "author": "Alex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aal89/node-dep-packer/issues"
+  },
+  "homepage": "https://github.com/aal89/node-dep-packer#readme",
+  "dependencies": {
+    "ramda": "^0.25.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}

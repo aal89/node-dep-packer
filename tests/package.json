@@ -1,0 +1,25 @@
+{
+  "name": "node-dep-packer-fake",
+  "version": "1.0.0",
+  "description": "A node module to combine several package.json into one. Fake one.",
+  "main": "node-dep-packer-fake.js",
+  "scripts": {
+    "test": "echo \"Error: fake\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "package",
+    "json",
+    "combine",
+    "fake"
+  ],
+  "author": "Alex",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.25.0.fake"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0.fake",
+    "mocha": "^5.2.0.fake"
+  }
+}
