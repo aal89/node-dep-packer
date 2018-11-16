@@ -116,6 +116,8 @@ Included is an `index.d.ts` file, Typescript should automatically pick this file
 
 ```typescript
 import { keepPackageData, merge } from "node-dep-packer";
+// OR
+import * as packer from "node-dep-packer";
  
 packer.keepPackageData(true);
 packer.merge("", "", "");
