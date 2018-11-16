@@ -1,9 +1,2 @@
-export const keepPackageData: boolean;
-
+export function keepPackageData(flag: boolean): void;
 export function merge(...packages: string[]): object;
-
-export namespace merge {
-  const prototype: {
-  };
-
-}

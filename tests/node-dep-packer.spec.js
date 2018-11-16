@@ -4,10 +4,10 @@ var packer = require('../node-dep-packer');
 describe('node-dep-packer', () => {
   beforeEach(() => {
     // Set keepPackageData back to default value after each test, just to make sure we run clean every time.
-    packer.keepPackageData = false;
+    packer.keepPackageData(false);
   });
   it('the type of the exported variables is correct', () => {
-    expect(packer.keepPackageData).to.be.a('boolean');
+    expect(packer.keepPackageData).to.be.a('function');
     expect(packer.merge).to.be.a('function');
   });
   it('returns an \'empty\' package.json is nothing is given', () => {
@@ -62,7 +62,7 @@ describe('node-dep-packer', () => {
     });
   });
   it('keeps package data of the most right supplied package.json file', () => {
-    packer.keepPackageData = true;
+    packer.keepPackageData(true);
     expect(packer.merge('./tests/package.json')).to.deep.equal({
       name: "node-dep-packer-fake",
       version: "1.0.0",
@@ -138,7 +138,7 @@ describe('node-dep-packer', () => {
       }
     });
 
-    packer.keepPackageData = true;
+    packer.keepPackageData(true);
 
     expect(packer.merge('./tests/package2.json', './tests/package.json')).to.deep.equal({
       name: "node-dep-packer-fake",

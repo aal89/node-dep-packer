@@ -16,16 +16,20 @@ Merges multiple package.json files into one. Accepts a list of strings that shou
 which it then tries to parse into JSON objects prior to deeply merging them from the right. Discards any unknown
 given files/values without error. Returns a combined version of all the given package.json files with the attribtues
 name, version, description, main, scripts, keywords, author and license set to empty (behaviour is overridable through
-the keepPackageData variable). Returns a Javascript object containg the merger.
+the keepPackageData func). Returns a Javascript object containg the merger.
 
 ##### `packages`
 
 `string` — Spread out list of string to paths to package.json files. Ignores everything but string variables.
 
-### `packer.keepPackageData`
+### `packer.keepPackageData(flag)`
 
 A settable flag to either keep or discard the default package.json data after the merger. Keeps the data from the most
 right supplied package.json file. See **Usage** for examples. Expects a `boolean`. Defaults to `false`.
+
+##### `flag`
+
+`boolean` — A flag to keep or discard data.
 
 ## Usage
 
@@ -36,7 +40,7 @@ Javascript and Typescript examples below. For expanded exmaples see the `tests` 
 ```javascript
 const packer = require('node-dep-packer');
 
-packer.keepPackageData = true; //-> default is false
+packer.keepPackageData(true); //-> default is false
 packer.merge('./package.json', '/Users/demo/Documents/test/package.json'); //-> resolves and gives output
 packer.merge(new Error(''), './package.json', false, new Map(), 0x0, '/Users/demo/Documents/test/package.json', undefined); //-> resolves and gives output (ignores non strings)
 ```
@@ -111,9 +115,9 @@ packer.merge(new Error(''), './package.json', false, new Map(), 0x0, '/Users/dem
 Included is an `index.d.ts` file, Typescript should automatically pick this file up and apply the typings across your codebase. The usage and output is then the same as regular Javascript.
 
 ```typescript
-import * as packer from "node-dep-packer";
+import { keepPackageData, merge } from "node-dep-packer";
  
-packer.keepPackageData = true;
+packer.keepPackageData(true);
 packer.merge("", "", "");
 ```
 

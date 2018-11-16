@@ -9,7 +9,7 @@
 const deepMerge = require('ramda').mergeDeepRight;
 const fs = require('fs');
 // A flag to not empty out the default attributes, it will keep the values of the most right package.json.
-const keepPackageData = false;
+let keepPackageData = false;
 // A default empty package.json structure
 const defaultPackageData = {
   name: "",
@@ -80,7 +80,7 @@ function merge(...packages) {
     .reduce(deepMerge, defaultPackageData);
 
   // Reset package.json data to empty ones so that an user can decide for itself what to do with it.
-  if (!this.keepPackageData) {
+  if (!keepPackageData) {
     mergedPacks.name = '';
     mergedPacks.version = '';
     mergedPacks.description = '';
@@ -97,6 +97,6 @@ function merge(...packages) {
 }
 
 module.exports = {
-  keepPackageData,
+  keepPackageData: (flag) => keepPackageData = flag,
   merge
 };
