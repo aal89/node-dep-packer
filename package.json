@@ -1,10 +1,10 @@
 {
   "name": "node-dep-packer",
   "version": "1.0.0",
-  "description": "A node module (npm) to easily combine several package.json files into one.",
+  "description": "A module to easily and deeply merge package.json files into a singular one.",
   "main": "node-dep-packer.js",
   "scripts": {
-    "test": "clear && mocha ./tests/*.spec.js --timeout 2000 --exit"
+    "test": "clear && mocha ./tests/*.spec.js"
   },
   "repository": {
     "type": "git",
